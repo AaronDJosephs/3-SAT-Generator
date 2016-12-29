@@ -1,9 +1,17 @@
 import java.util.Scanner;
+import java.util.Random;
+import java.math.*;
 
 public class Generator {
 	public static int m; //m is equal to the number of clauses
 	public static int n; //n is equal to the number of variables
 	
+	public boolean randomBool() {
+		double rand = Math.random();
+		if (rand > 0.5) 
+			return true;
+		else return false;
+	}
 	
 	
 	public static void main(String[] args) {
