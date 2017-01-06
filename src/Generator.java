@@ -2,9 +2,12 @@ import java.util.Scanner;
 import java.math.*;
 import java.util.Random;
 
+
+
 public class Generator {
 	public static int m; //m is equal to the number of clauses
 	public static int n; //n is equal to the number of variables
+	public static String instance = ""; //instance keeps track of the fully generated instance
 	
 	//This function generates a random boolean
 	public static boolean randomBool() { 
@@ -17,6 +20,7 @@ public class Generator {
 	//This function selects a random element from a boolean array
 	public static boolean randomElement(boolean[] array) {
 		int rndm = new Random().nextInt(array.length);
+		instance = instance + "v" + rndm;
 		return array[rndm];
 	}
 	
@@ -33,16 +37,19 @@ public class Generator {
 
 		//in a loop of length m, randomly select 3 variables at a time to add to an array
 		for(int i = 0; i <= m-1; i++) {
-			
+			instance = instance + "(";
+			boolean one = randomElement(variables);
+			instance = instance + " and ";
+			boolean two = randomElement(variables);
+			instance = instance + " and ";
+			boolean three = randomElement(variables);
+			instance = instance + ") or ";
+			clauses[i] = new Clause(one, two, three);
 		}
 		
-		//for(int i = 0; i <= n-1; i++) {
-		//	variable[i] = randomBool();
-		//}
-		
-		
+		//prints out instance, deletes final " or"
+		System.out.println(instance.substring(0, instance.length()-3));
 		System.out.println("\n Your m:n ratio is " + z + ".");
-		//System.out.println("\n Your first and last variables are as follows: " + variable[0] + " " + variable[n-1]);
 		System.out.println("\n The length of the variable list is: " + variables.length);
 	}
 
