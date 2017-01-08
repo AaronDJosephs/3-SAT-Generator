@@ -39,11 +39,11 @@ public class Generator {
 		for(int i = 0; i <= m-1; i++) {
 			instance = instance + "(";
 			boolean one = randomElement(variables);
-			instance = instance + " and ";
+			instance = instance + " or ";
 			boolean two = randomElement(variables);
-			instance = instance + " and ";
+			instance = instance + " or ";
 			boolean three = randomElement(variables);
-			instance = instance + ") or ";
+			instance = instance + ") and ";
 			clauses[i] = new Clause(one, two, three);
 		}
 		
