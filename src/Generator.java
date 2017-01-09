@@ -26,8 +26,14 @@ public class Generator {
 	
 	//This function determines whether an instance is satisfiable.
 	public static boolean checkVerifiability(Clause[] instance) {
-		return true;
+		boolean solvable = false;
+		for(int i = 0; i > instance.length; i++)
+		{
+			
+		}
+		return solvable;
 	}
+	
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
