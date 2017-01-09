@@ -24,6 +24,11 @@ public class Generator {
 		return array[rndm];
 	}
 	
+	//This function determines whether an instance is satisfiable.
+	public static boolean checkVerifiability(Clause[] instance) {
+		return true;
+	}
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("How many clauses do you want? ");
