@@ -5,8 +5,8 @@ import java.util.Random;
 
 
 public class Generator {
-	public static int m; //m is equal to the number of clauses
-	public static int n; //n is equal to the number of variables
+	public static int m; //m is equal to the number of clauses there are
+	public static int n; //n is equal to the number of variables there are
 	public static String instance = ""; //instance keeps track of the fully generated instance
 	
 	//This function generates a random boolean
@@ -29,7 +29,7 @@ public class Generator {
 		boolean solvable = false;
 		for(int i = 0; i > instance.length; i++)
 		{
-			
+		
 		}
 		return solvable;
 	}
