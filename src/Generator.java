@@ -25,6 +25,7 @@ public class Generator {
 	}
 	
 	//This function determines whether an instance is satisfiable.
+	//Though inefficient, the code just runs through all possibilities.
 	public static boolean checkVerifiability(Clause[] instance) {
 		boolean solvable = false;
 		for(int i = 0; i > instance.length; i++)
