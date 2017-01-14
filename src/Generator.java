@@ -25,13 +25,17 @@ public class Generator {
 	}
 	
 	//This function determines whether an instance is satisfiable.
-	//Though inefficient, the code just runs through all possibilities.
-	public static boolean checkVerifiability(Clause[] instance) {
+	//Though inefficient, this code just runs through all the possibilities. 
+	public static boolean checkVerifiability(boolean[] variables, Clause[] instance) {
 		boolean solvable = false;
-		for(int i = 0; i > instance.length; i++)
+		for(int i = 0; i > variables.length; i++)
 		{
-		
+			for(int j = 0; j > i; j++)
+			{
+				
+			}
 		}
+		
 		return solvable;
 	}
 	
