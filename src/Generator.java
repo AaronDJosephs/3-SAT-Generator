@@ -5,8 +5,8 @@ import java.util.Random;
 
 
 public class Generator {
-	public static int m; //m is equal to the number of clauses there are
-	public static int n; //n is equal to the number of variables there are
+	public static int m; //m is equal to the number of clauses
+	public static int n; //n is equal to the number of variables
 	public static String instance = ""; //instance keeps track of the fully generated instance
 	
 	//This function generates a random boolean
@@ -20,8 +20,14 @@ public class Generator {
 	//This function selects a random element from a boolean array
 	public static boolean randomElement(boolean[] array) {
 		int rndm = new Random().nextInt(array.length);
-		instance = instance + "v" + rndm;
-		return array[rndm];
+		if (randomBool()==true) {
+			instance = instance + "v" + rndm;
+			return array[rndm];
+		}
+		else {
+			instance = instance + "!v" + rndm;
+			return !array[rndm];
+		}
 	}
 	
 	//This function determines whether an instance is satisfiable.
@@ -34,7 +40,6 @@ public class Generator {
 		}
 		return solvable;
 	}
-	
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -51,14 +56,15 @@ public class Generator {
 		for(int i = 0; i <= m-1; i++) {
 			instance = instance + "(";
 			boolean one = randomElement(variables);
-			instance = instance + " or ";
+			instance = instance + "\\/";
 			boolean two = randomElement(variables);
-			instance = instance + " or ";
+			instance = instance + "\\/";
 			boolean three = randomElement(variables);
-			instance = instance + ") and ";
+			instance = instance + ")/\\";
 			clauses[i] = new Clause(one, two, three);
 		}
-		
+		instance = instance + ")";
+		System.out.println(Boolean.toString(variables[1]));
 		//prints out instance, deletes final " or"
 		System.out.println(instance.substring(0, instance.length()-3));
 		System.out.println("\n Your m:n ratio is " + z + ".");
