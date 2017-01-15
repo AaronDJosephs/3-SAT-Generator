@@ -32,6 +32,14 @@ public class Generator {
 	
 	//This function determines whether an instance is satisfiable.
 	//Though inefficient, this code just runs through all the possibilities. 
+	/*
+	 * What does it mean to check every possibility? 
+	 * Take an instance, and a list of variables, and try every combination of variables until one works. 
+	 * If none are successful, it is not satisfiable. 
+	 * 1. Input: an instance, a variable list. 
+	 *    Output: a boolean. If true, the instance is satisfiable. If false, the instance is not satisfiable.
+	 * 2. 
+	 */
 	public static boolean checkVerifiability(boolean[] variables, Clause[] instance) {
 		boolean solvable = false;
 		while (true) {
