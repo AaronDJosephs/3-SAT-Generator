@@ -28,14 +28,10 @@ public class Generator {
 	//Though inefficient, this code just runs through all the possibilities. 
 	public static boolean checkVerifiability(boolean[] variables, Clause[] instance) {
 		boolean solvable = false;
-		for(int i = 0; i > variables.length; i++)
-		{
-			for(int j = 0; j > i; j++)
-			{
-				
-			}
+		while (true) {
+			
+			break;
 		}
-		
 		return solvable;
 	}
 	
