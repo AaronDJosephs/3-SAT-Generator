@@ -43,7 +43,9 @@ public class Generator {
 	public static boolean checkVerifiability(boolean[] variables, Clause[] instance) {
 		boolean solvable = false;
 		while (true) {
-			
+			//for (int i = 0; i < ; i++) {
+				
+			//}
 			break;
 		}
 		return solvable;
