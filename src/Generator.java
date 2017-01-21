@@ -39,7 +39,8 @@ public class Generator {
 	 * 1. Input: an instance, a variable list. 
 	 *    Output: a boolean. If true, the instance is satisfiable. If false, the instance is not satisfiable.
 	 * 2. Check if satisfiable with all trues
-	 * 
+	 * 3. Change first to false, check if rest if satisfiable now
+	 * 4. Continue 
 	 */
 	public static boolean checkVerifiability(boolean[] variables, Clause[] instance) {
 		boolean solvable = false;
