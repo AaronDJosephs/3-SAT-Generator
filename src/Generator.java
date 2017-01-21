@@ -30,7 +30,7 @@ public class Generator {
 		}
 	}
 	
-	//This function determines whether an instance is satisfiable.
+		//This function determines whether an instance is satisfiable.
 	//Though inefficient, this code just runs through all the possibilities. 
 	/*
 	 * What does it mean to check every possibility? 
@@ -38,19 +38,32 @@ public class Generator {
 	 * If none are successful, it is not satisfiable. 
 	 * 1. Input: an instance, a variable list. 
 	 *    Output: a boolean. If true, the instance is satisfiable. If false, the instance is not satisfiable.
-	 * 2. Check if satisfiable with all trues
-	 * 3. Change first to false, check if rest if satisfiable now
-	 * 4. Continue 
+	 * 2. 
 	 */
-	public static boolean checkVerifiability(boolean[] variables, Clause[] instance) {
-		boolean solvable = false;
-		while (true) {
-			//for (int i = 0; i < ; i++) {
-				
-			//}
-			break;
+	public static boolean checkVerifiability(boolean[] variables, Clause[] clauses) {
+		for (int i = 0; i < variables.length; i++) {
+			variables[i] = true;
 		}
-		return solvable;
+		return solvable(variables, instance, clauses);
+	}
+	
+	//Reports whether or not a particular setting of variables solves the instance.  
+	public static boolean solvable(boolean[] variables, String instance, Clause[] clauses) {
+		String clause;
+		String[] splitInstance = instance.split("/\"");
+		for (int i = 0; i < splitInstance.length; i++) {
+			clause = splitInstance[i];
+			clause = clause.substring(1, clause.length()-1);
+			Clause currentClause = new Clause(true, true, true);
+			boolean var1;
+			char[] clauseChars = clause.toCharArray();
+			for (char c : clauseChars) {
+				if (c == '!') {
+					
+				}
+			}
+		}
+		return true;
 	}
 	
 	public static void main(String[] args) {
