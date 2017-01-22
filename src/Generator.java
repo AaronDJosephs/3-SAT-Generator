@@ -30,7 +30,7 @@ public class Generator {
 		}
 	}
 	
-		//This function determines whether an instance is satisfiable.
+	//This function determines whether an instance is satisfiable.
 	//Though inefficient, this code just runs through all the possibilities. 
 	/*
 	 * What does it mean to check every possibility? 
@@ -54,12 +54,36 @@ public class Generator {
 		for (int i = 0; i < splitInstance.length; i++) {
 			clause = splitInstance[i];
 			clause = clause.substring(1, clause.length()-1);
-			Clause currentClause = new Clause(true, true, true);
-			boolean var1;
+			Clause currentClause;
+			Boolean var1 = null;
+			Boolean var2 = null;
+			Boolean var3 = null;
 			char[] clauseChars = clause.toCharArray();
-			for (char c : clauseChars) {
-				if (c == '!') {
-					
+			for (int j = 0; j < clauseChars.length; j++) {
+				if (clauseChars[j] == '!') {
+					int k = j+2; //the index of the character in clauseChars corresponding to the next available variable number
+					if (var1 == null) {
+						
+					}
+					else if (var2 == null) {
+						
+					}
+					else {
+						
+					}
+					j = j + 2;
+				}
+				if (clauseChars[j] == 'v') {
+					int k = j+1; //the index of the character in clauseChars corresponding to the next available variable number
+					if (var1 == null) {
+						
+					}
+					else if (var2 == null) {
+						
+					}
+					else {
+						
+					}
 				}
 			}
 		}
@@ -94,6 +118,7 @@ public class Generator {
 		System.out.println(instance.substring(0, instance.length()-3));
 		System.out.println("\n Your m:n ratio is " + z + ".");
 		System.out.println("\n The length of the variable list is: " + variables.length);
+		System.out.println("\n " + Boolean.toString(checkVerifiability(variables, clauses)));
 	}
 
 }
