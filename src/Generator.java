@@ -41,10 +41,12 @@ public class Generator {
 	 * 2. 
 	 */
 	public static boolean checkVerifiability(boolean[] variables, Clause[] clauses) {
+		boolean solutionPossible = false;
 		for (int i = 0; i < variables.length; i++) {
 			variables[i] = true;
 		}
-		return solvable(variables, instance, clauses);
+		solutionPossible = solvable(variables, instance, clauses);
+		return solutionPossible;
 	}
 	
 	//Reports whether or not a particular setting of variables solves the instance.  
@@ -63,28 +65,32 @@ public class Generator {
 				if (clauseChars[j] == '!') {
 					int k = j+2; //the index of the character in clauseChars corresponding to the next available variable number
 					if (var1 == null) {
-						
+						var1 = !variables[Character.getNumericValue(clauseChars[k])];
 					}
 					else if (var2 == null) {
-						
+						var2 = !variables[Character.getNumericValue(clauseChars[k])];
 					}
 					else {
-						
+						var3 = !variables[Character.getNumericValue(clauseChars[k])];
 					}
 					j = j + 2;
 				}
 				if (clauseChars[j] == 'v') {
 					int k = j+1; //the index of the character in clauseChars corresponding to the next available variable number
 					if (var1 == null) {
-						
+						var1 = !variables[Character.getNumericValue(clauseChars[k])];
 					}
 					else if (var2 == null) {
-						
+						var2 = !variables[Character.getNumericValue(clauseChars[k])];
 					}
 					else {
-						
+						var3 = !variables[Character.getNumericValue(clauseChars[k])];
 					}
 				}
+			}
+			currentClause = new Clause(var1, var2, var3);
+			if (var1 == false && var2 == false && var3 == false) {
+				return false;
 			}
 		}
 		return true;
@@ -120,5 +126,4 @@ public class Generator {
 		System.out.println("\n The length of the variable list is: " + variables.length);
 		System.out.println("\n " + Boolean.toString(checkVerifiability(variables, clauses)));
 	}
-
 }
