@@ -42,10 +42,12 @@ public class Generator {
 	 */
 	public static boolean checkVerifiability(boolean[] variables, Clause[] clauses) {
 		boolean solutionPossible = false;
-		for (int i = 0; i < variables.length; i++) {
-			variables[i] = true;
-		}
+		for (int i = 0; i < variables.length; i++) variables[i] = true;
 		solutionPossible = solvable(variables, instance, clauses);
+		if (solutionPossible == true) return true;
+		for (int i = 0; i < variables.length; i++) {
+			
+		}
 		return solutionPossible;
 	}
 	
