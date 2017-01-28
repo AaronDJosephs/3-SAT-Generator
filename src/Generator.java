@@ -38,7 +38,10 @@ public class Generator {
 	 * If none are successful, it is not satisfiable. 
 	 * 1. Input: an instance, a variable list. 
 	 *    Output: a boolean. If true, the instance is satisfiable. If false, the instance is not satisfiable.
-	 * 2. 
+	 * 2. Set all variables to true. 
+	 * 3. If this solves instance, return true.
+	 * 4. Set first variable to false.
+	 * 5. Recurse on all variables but the first.
 	 */
 	public static boolean checkVerifiability(boolean[] variables, Clause[] clauses) {
 		boolean solutionPossible = false;
