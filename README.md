@@ -6,3 +6,5 @@ Essentially a single function. The generator will prompt the user for an m (numb
 The generator is functional, and will also include a test to see if the instance is solvable. 
 
 The test is the simple exponential solution, but that is acceptable for these purposes.
+
+The instance that is generated is in the form of a string, which is a little annoying to deal with, but in other ways is helpful. 
