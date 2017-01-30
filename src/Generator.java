@@ -55,6 +55,7 @@ public class Generator {
 	}
 	
 	//Reports whether or not a particular setting of variables solves the instance.  
+	//This is a rather messy method and should be fine-tuned when possible.
 	public static boolean solvable(boolean[] variables, String instance, Clause[] clauses) {
 		String clause;
 		String[] splitInstance = instance.split("/\"");
