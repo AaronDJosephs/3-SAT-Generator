@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.math.*;
 import java.util.Random;
 
 
@@ -62,7 +61,6 @@ public class Generator {
 		for (int i = 0; i < splitInstance.length; i++) {
 			clause = splitInstance[i];
 			clause = clause.substring(1, clause.length()-1);
-			Clause currentClause;
 			Boolean var1 = null;
 			Boolean var2 = null;
 			Boolean var3 = null;
@@ -70,34 +68,19 @@ public class Generator {
 			for (int j = 0; j < clauseChars.length; j++) {
 				if (clauseChars[j] == '!') {
 					int k = j+2; //the index of the character in clauseChars corresponding to the next available variable number
-					if (var1 == null) {
-						var1 = !variables[Character.getNumericValue(clauseChars[k])];
-					}
-					else if (var2 == null) {
-						var2 = !variables[Character.getNumericValue(clauseChars[k])];
-					}
-					else {
-						var3 = !variables[Character.getNumericValue(clauseChars[k])];
-					}
+					if (var1 == null) var1 = !variables[Character.getNumericValue(clauseChars[k])];
+					else if (var2 == null) var2 = !variables[Character.getNumericValue(clauseChars[k])];
+					else var3 = !variables[Character.getNumericValue(clauseChars[k])];
 					j = j + 2;
 				}
 				if (clauseChars[j] == 'v') {
 					int k = j+1; //the index of the character in clauseChars corresponding to the next available variable number
-					if (var1 == null) {
-						var1 = !variables[Character.getNumericValue(clauseChars[k])];
-					}
-					else if (var2 == null) {
-						var2 = !variables[Character.getNumericValue(clauseChars[k])];
-					}
-					else {
-						var3 = !variables[Character.getNumericValue(clauseChars[k])];
-					}
+					if (var1 == null) var1 = !variables[Character.getNumericValue(clauseChars[k])];
+					else if (var2 == null) var2 = !variables[Character.getNumericValue(clauseChars[k])];
+					else var3 = !variables[Character.getNumericValue(clauseChars[k])];
 				}
 			}
-			currentClause = new Clause(var1, var2, var3);
-			if (var1 == false && var2 == false && var3 == false) {
-				return false;
-			}
+			if (var1 == false && var2 == false && var3 == false) return false;
 		}
 		return true;
 	}
@@ -109,6 +92,7 @@ public class Generator {
 		System.out.println("\n How many variables do you want? ");
 		n = Integer.parseInt(scan.next());
 		float z = (float) m / (float) n;
+		scan.close();
 		
 		boolean[] variables = new boolean[n]; //Creates an array of booleans of length n. This represents the variables.
 		Clause[] clauses = new Clause[m]; //Creates an array of clauses of length m. Each clause consists of 3 variables.
@@ -124,6 +108,7 @@ public class Generator {
 			instance = instance + ")/\\";
 			clauses[i] = new Clause(one, two, three);
 		}
+		
 		instance = instance + ")";
 		System.out.println(Boolean.toString(variables[1]));
 		//prints out instance, deletes final " or"
