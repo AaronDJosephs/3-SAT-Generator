@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -48,11 +49,9 @@ public class Generator {
 		solutionPossible = solvable(variables, instance, clauses);
 		if (solutionPossible == true) return true;
 		for (int i = 0; i < variables.length; i++) {
-			if (clauses.length > 1) {
-				variables[0] = false;
-				if (solutionPossible == true) return true;
-				
-			}
+			//if (variables.length > 1) checkVerifiability(Arrays.copyOfRange(variables, 1, variables.length), clauses);
+			variables[0] = false;
+			if (solutionPossible == true) return true;
 		}
 		return solutionPossible;
 	}
