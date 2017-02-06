@@ -7,4 +7,4 @@ The generator is functional, and will also include a test to see if the instance
 
 The test is the simple exponential solution, but that is acceptable for these purposes.
 
-The instance that is generated is in the form of a string, which is a little annoying to deal with, but in other ways is helpful. 
+The instance that is generated is in the form of a string, which is a little annoying to deal with, but in other ways is helpful. I think I'll have to add a new class for instance so that it's not in the form of a string, and instead it has a toString method. That way, I can easily get the benefits of the string form without the detriments, though it will require a significant rework.
