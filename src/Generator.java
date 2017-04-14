@@ -96,6 +96,8 @@ public class Generator {
 		n = Integer.parseInt(scan.next());
 		float z = (float) m / (float) n;
 		scan.close();
+		//these are all simple input/output interactions. The ratio of clause to variable is the important defining characteristic
+		//of 3-SAT instances, so inputing those variables allows the user to select what they're gonna get.
 		
 		boolean[] variables = new boolean[n]; //Creates an array of booleans of length n. This represents the variables.
 		Clause[] clauses = new Clause[m]; //Creates an array of clauses of length m. Each clause consists of 3 variables.
