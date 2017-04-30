@@ -112,7 +112,7 @@ public class Generator {
 			boolean three = randomElement(variables);
 			instance = instance + ")/\\";
 			clauses[i] = new Clause(one, two, three);
-		}
+		} //this needs to be modified once the instance is a type, not just a string
 		
 		instance = instance + ")";
 		System.out.println(Boolean.toString(variables[1]));
