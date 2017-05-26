@@ -123,3 +123,4 @@ public class Generator {
 		System.out.println("\n " + Boolean.toString(checkVerifiability(variables, clauses)));
 	}
 }
+//IMPORTANT: Don't forget to add in a way to convert the instance from one type to another in case that's needed for the level generator. 
